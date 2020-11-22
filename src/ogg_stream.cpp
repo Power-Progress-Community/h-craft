@@ -283,6 +283,9 @@ bool OggStream::Stream(ALuint buffer)
     {
 #ifdef __ANDROID__	// tremor
 		result = ov_read(&mOggStream, data + size, SOUND_STREAM_BUF_SIZE - size, & section);
+#elif  (__ppc__ || _ppc64__)
+        //rt1k
+        result = ov_read(&mOggStream, data + size, SOUND_STREAM_BUF_SIZE - size, 1, 2, 1, & section);
 #else
         result = ov_read(&mOggStream, data + size, SOUND_STREAM_BUF_SIZE - size, 0, 2, 1, & section);
 #endif
