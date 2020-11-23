@@ -9,5 +9,5 @@ Here more information http://www.irrgheist.com/hcraftsource.htm
 
 clone this repository and execute ./build.sh; if fail checkout build dependencies
 
-## Copyright ##
+### Copyright ###
 Please look at license infomation on Autors website
