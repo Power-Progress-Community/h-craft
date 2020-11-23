@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=H-Craft
+Comment=SciFi Racing Game
+Exec=/usr/games/h-craft
+Path=/usr/share/games/h-craft
+Terminal=false
+Type=Application
+Icon=h-craft.png
+Categories=Game;
+StartupNotify=true
+Name[en_US]=H-Craft

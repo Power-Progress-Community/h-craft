@@ -1,0 +1,26 @@
+compiled date Nov 21 2020
+compiled time 17:35:23
+Linux 5.5.0-1-powerpc64 #1 SMP Debian 5.5.13-2 (2020-03-30) ppc64
+Desktop width:1360
+Desktop height:768
+Desktop depth:24
+Use desktop settings
+createDevice
+Resolution width:1360
+Resolution height:768
+Resolution depth:24
+createDevice ok
+mGui->Init
+OPEN_AL
+AL_VERSION: 1.1 ALSOFT 1.12.854
+AL_RENDERER: OpenAL Soft
+AL_VENDOR: OpenAL Community
+Loading menu dialogs
+No functor created for unknown GUI element: sld_lights
+No functor created for unknown GUI element: sld_texture_resolution
+Init finished
+MODE_GUI enabled
+start running
+mesh had no triangle selector: /home/rt1k/hcraft/./media/levels/tutorial01.lmo
+clean quit start
+clean quit successful
