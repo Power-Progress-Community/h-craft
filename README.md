@@ -2,7 +2,7 @@
 
 ### What is this repository for? ###
 
-This repository contains the fork of source-code for the game [H-Craft Championship](http://www.irrgheist.com/games.htm) from [Irrgheist](http://www.irrgheist.com) patched to buil for PowerPC.
+This repository contains the fork of source-code for the game [H-Craft Championship](http://www.irrgheist.com/games.htm) from [Irrgheist](http://www.irrgheist.com) patched to buil for PowerPC64.
 
 ### How to set it up? ###
 
