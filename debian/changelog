@@ -1,0 +1,163 @@
+h-craft (1.3.3) unstable; urgency=low
+
+  [ Michael Zeilfelder ]
+  * Add all H-Craft Championship sources.
+  * Add all libs needed by hcraft.
+  * Add Windows dll's needed by hcraft.
+  * Add the .hg_archival.txt with info about original repository. We did create a new repository to get rid of the history as it had contained stuff which didn't belong in an open-source project.
+  * Remove build-scripts for cryptolib. That's been removed long ago.
+  * Add info that cmake is needed to build requirements.
+  * Fix copy-media script for Linux (why did it even work before?) and add one for mingw.
+  * Get it building on MinGW. Improve build documentation.
+  * Improve build docs.
+  * Add editor documentation. Disable touch-simulation mode. Allow leaving freefly mode with ESC.
+  * Remove support for IRR_REV 1 - no longer needed.
+  * Use release settings in project files. Fix release scripts.
+  * Fix release bug in dialog (element is static on PC and button on Android with same name - bad idea...) Set Irrlicht compile flags to reduce it's size.
+  * Irrlicht compile flags.
+  * FakeKeyEvent's must be send to our own eventreceiver as well. This fixes using joypad buttons for menu-controls. It had worked in the past because focus-handling had been done different once.
+  * Add .cbTemp to .ignore file.
+  * Minor documentation fix.
+  * Fix highscore level display. Don't show FPS in PC releases by default.
+  * Fix highlighting of next race after a championship reset.
+  * Prevent ghosts from showing up in  normal races.
+  * Minor build correction.
+  * Change build-settings for linux-release.
+  * Fix linux release script for 64-bit versions.
+  * Update build docs.
+  * Added tag HCRAFT1_3_PC for changeset d2f5e320d6a6
+  * README.md edited online with Bitbucket
+  * README.md edited online with Bitbucket
+  * README.md edited online with Bitbucket
+  * README.md edited online with Bitbucket
+  * README.md edited online with Bitbucket
+  * Change build-flags in Irrlicht to remove unused parts of the engine.
+  * Fix build-script (newer NDK platform)
+  * Now requiring Android 13 throughout. Android 10 not sufficient for ad-solution anyway, but there was also a problem with freetype. It supported only 9 and 13 for some reason.
+  * Update build aliases for Android.
+  * Play ads less often to avoid annoying the users.
+  * Update android release info in build.txt
+  * Update build docs.
+  * Added tag HCRAFT1_GOOGLEPLAY_V3 for changeset 373ac68cbe61
+  * Fix bug in Android build-script. The HOVER_RELEASE define was not passed on before.
+  * Pass the NDEBUG define also on to the sources in Android build script.
+  * Increase version code for new google-play upload.
+  * Added tag Added, tag, HCRAFT1_GOOGLEPLAY_V4 for changeset 18cffd15da83
+  * README.md edited online with Bitbucket
+  * README.md edited online with Bitbucket
+  * Add license information to the gui-dialog sources.
+  * Update license info for music by Manolo Camp.
+  * Fix problems and crashes with virtual keyboard input on Android.
+  * Update version number for googleplay and set the name to H-Craft (was 'hcraft1' which looked strange).
+  * Fix back-key for virtual android keyboards. Use sensorLandscape instead of landscape mode (so people can flip the device) Trying some windowSoftInputMode settings which make sense, but don't help avoiding the problems on lollipop.
+  * Make touch-input simulation a config option instead of a define to allow for faster switching. Reduce dependency on global APP and put a config reference in dialogs. Remove some globals which are not needed.
+  * Create elements only when they  have a parent. This way it's easier to add/remove whole groups of gui-elements by making them "PC" or "TOUCH" only.
+  * Add support for an alternative virtual touch keyboard. Some troubles with virtual keyboard on Android (especially Lollipop), so have to offer some alternative or users can't create profiles. This is a pretty simply keyboard just with basic ansi signs. But current font only supports those anyway.
+  * Added tag HCRAFT1_GOOGLEPLAY_V5 for changeset 4bdfc759c30b
+  * Remove dependency on libts which is not needed. Thanks @majorlunac for reporting.
+  * Add SDL-1.2.15 and update to it on Linux. MinGW compiles not yet updated & tested, so keep 1.2.11 around until that works. This might fix some joystick problems.
+  * Update changes.txt
+  * Fix comment spelling.
+  * Switch to SDL-1.2.15 on MinGW. Remove SDL-1.2.11.
+  * Improve error messages. - More helpful errors when starting fails. - Less error-output in release - that was way too much and drowned the real problems. - Physics should also use logging instead of printf's - at least for the stuff that's in release.
+  * Tiny spelling fix.
+  * Fix build problem in make-openal-linux.sh reported by dev-random here: https://bitbucket.org/mzeilfelder/trunk_hc1/issue/1/compilation-isssues Some cleanup of 32-bit linux solution in hover.cbp (but that compile still hasn't been tested yet).
+  * Some (non-debian) distros build libs into target lib64 instead of lib on 64-bit systems. Thx @dev-random for reporting. New solution is more of a workaround, but let's see if it works for now. Bugtracker-link: https://bitbucket.org/mzeilfelder/trunk_hc1/issue/1/compilation-isssues
+  * Get rid of some warnings.
+  * Get rid of all demo references. There is no longer a demo so that's dead code now.
+  * Get rid of support for Irrlicht svn versions <= 3231.
+  * Another place to get rid of support for Irrlicht before svn 3233.
+  * Ensure adverts code not run in PC release.
+  * Fix recently introduced problem that demo-version was now always displayed in main-screen.
+  * Ads+buying only worked on first start on Android. Yeah... the nightmare bug. Moving my prodider.xml out of version control messed it up. All hard tests had been done and it still worked in the quick tests.
+  * Add freetype 2.5.5 Update Linux build from freetype 2.5.2 to 2.5.5. MinGW and Android not yet affected.
+  * Update Android version to freetype 2.5.5
+  * Avoid crashes when ad-unit's couldn't be set. Couldn't reproduce this yet, so can't figure out how it got in that state. But just being more careful now.
+  * No longer restart the game when the user presses off/on on Android. Instead we pause now - so people can continue playing and there are no freezes from long loading times when turning phone on (those look like freezes).
+  * Update to libogg 1.3.2 and libvorbis 1.3.5 on Linux. MinGW and Android following soon. NOTE: Yes, I realize now updating libs like this is a crazy solution which will blow up my repository by several MB each time! So will have to find another solution. What I need is: - It must be possible to have several versions in parallel (as I can't update all systems at the same time usually) - It should be possible for me to modify files. I need that currently mainly to add Android build-files - so maybe I can find another solution for that. If anyone has experience with such a setup or ideas please tell...
+  * Get vorbis compiling on Android.
+  * Add changed c::b project for earlier fixes to libs on systems using lib64 instead of lib folders (like suse). Sorry, project file was never saved for last few hours - so changed version didn't get checked-in when it should have been.
+  * Change libraries for Linux64 ES2 same way as for other 64-bit targets recently in c::b project file.
+  * Config loading for android no longer tries once with wrong asset path (minor speed improvement, but not in a place where it matters) Getting a little closer probably to fixing the ad-crashes. For now just catching the exception, but having an idea now what's causing them.
+  * Make sure (I hope) that ads never crash the game again. Also get ads still showing even if they don't load once in between.
+  * Disable harfbuzz in freetype for now on Linux. I don't know yet if any of our fonts would improve by harfbuzz. Reason it's disabled for now is that it seems to cause compile-troubles on suse with default settings. Thanks @dev-random for reporting.
+  * Indention.
+  * Reduce logging output in Android release (was just accidental that much) Remove NDEBUG flag in Android debug - that seems to make no sense. Update version number to 1.3.2 and android:versionCode 6
+  * Update release infos.
+  * Added tag HCRAFT1_GOOGLEPLAY_V6 for changeset e99520f204b1
+  * Use immersive sticky mode when android >= 4.4 to get rid of the system ui elements.
+  * Compile freetype on Android now also without harfbuzz.
+  * Simplify sound update (tiny optimization).
+  * Tiny cleanup
+  * Add a script that runs all es2 shaders through glslopt. Not sure yet if it's worth it - in my first tests it made no speed difference at all.
+  * Replace std::map for tick functors in physics with std::vector with pair. Only inserted once and lookup for vectors is faster (aka very tiny optimiziation).
+  * Replace the std::map for physics object by a more cache friendly std::vector with pair. Also PhysicsObjects are POD types so use them directly now without pointers.
+  * Improve const correctness.
+  * Remove unused functions Add profiling infos (likely big optimization possibility in TrackMarker - we only need the 2 triangles at runtime - no need to recalculate them over and over each frame!) Whitespace changes.
+  * Another const-correctness fix.
+  * Refactoring: Split LevelMananger and Level.
+  * Remove unneeded includes.
+  * More refactoring - move more stuff away from the fat Level class.
+  * refactoring: Move mor stuff from level to TrackMarker and give TrackMarker it's own files.
+  * Move the android, advert and billing stuff to a new "mobile" folder. In theory some of that stuff could also be implemented on PC, I just don't plan to ever do that.
+  * Remove billing file which is no longer used (stuff had been moved to another file long ago )
+  * Update c::b project file.
+  * Simplify the gui event-handling code. I really must have loved typing back then...
+  * Remove unused variable.
+  * Whitespace change.
+  * Minor cleanup - get rid of an unused parameter and add another one to avoid getting it new several times.
+  * Another minor cleanup (passing physicsobject instead of searching it new in the function).
+  * More minor cleanup. References instead of pointers and some const correctness.
+  * Remove out-commented code and minor cleanup.
+  * More tiny cleanup stuff (constification etc)
+  * Remove more outcommented code.
+  * textslider is not part of Irrlicht (and no plan to ever put it there), so it was wrong to put it in the irr namespace.
+  * Add a parent gui element for all dialogs. This makes code easier and allows for some speed improvements.
+  * Rename getDialogParent to getDialogRoot (more fitting now).
+  * Add a test that just goes into the gui and quits again.
+  * Avoid memory leaks caused by new root element for gui-dialogs. Also fix minor memory leaks for app_tester and event-handlers for elements which don't exist. Remove event handler for ai-dialog which got added twice (only editor, so wasn't important).
+  * Code cleanup - Get rid of an unitialized variable warning from valgrind (thought I couldn't figure out any way it could have happened, that was a strange one) - define out some unused debug code
+  * Minor cleanup - define out some code which isn't used currently (probably could be kicked out) - just some minor type fixes Just stuff I find while hunting while valgrind is still giving me errors (even thought less now, generally when ai makes second round or after loading a few times).
+  * Merge bugfix from Irrlicht r5171: Fix first calculation of the camerascenenode boundingsphere. (had to get this out of the way as it prevents me from hunting other floating point exceptions)
+  * Fix crash when pressing space in game (only on PC). Luckily seems to be a new bug, wasn't in last release. Was caused by button getting focus again despite dialog being hidden.
+  * Start trapping a few floating point exceptions in debug. Fix one minor problem with that (rather a non-issue).
+  * Making code a little bit more readable.
+  * Add some const correctness.
+  * Kick out the drift-markers code. At one point in development there was the idea of showing markers for the direction the hcrafts would take without steerings. But was not helpful, but rather irritating instead. So I don't think we'll add it again.
+  * Add new header to project file.
+  * More constification and kicking out some unused functions.
+  * More constification. (it's really all just minor stuff I see while hunting for the bug which causes Valgrind to tell me aiTrack uses uninitialized memory after a bot dropped off the track of finished a round).
+  * Minor cleanup, documentation and better variable name.
+  * Cleanup: Don't mix unsigned int and size_t as much anymore (size_t always correct for std::vector indices).
+  * Const correctness.
+  * Merge Irrlicht-bugfix: Prevent division by 0 in CGUIScrollBar::setPos Was fixed in Irrlicht 1.9 in svn rev. 5209 Had been necessary to allow starting the editor while floating point tests are enabled.
+  * Speed up some collisions. Was previously checking for walls and progress on track by constantly re-calculating the necessary triangles. Now caching them once at start. Makes a small but noticable difference (larger on systems with strong gpu/weak cpu). In the Moto G testcase ~4 ms per frame faster now.
+  * Android Makefile still contained old way to copy around Shaders which conflicted with the new alias solution. Constantly got my old shader folder back and didn't realize why :-) Current solution is to use the n0, nr0 aliases from docs/build.txt for Android. Might be improved one day.
+  * Fix typo.
+  * Remove neural network AI :-( While it was fun to watch them learn, this approach was in the end more wishful thinking than really thought out. Basically my naive hope had been giving the networks a little bit information about their driving state and the track and then use some genetic algorithm to design a neural network automatically. While this kind of stuff might work one day (with enough computer power and inputs) it's a) hard to make a controllable AI that way b) I should start working with a little bit better test-cases to learn what can be done with this tech and work my way up. Might do another game just for that one day :-)
+  * Remove some code about AI-training which hadn't been defined out previously but is also no longer necessary after removing the nn-stuff.
+  * Update irrlicht_ogl-es to Irrlicht's svn revision 5220.
+  * Add changed test for long_level which is better to use in combination with gprof. Runs 5 minutes and then quits immediately. Other long_level test was about Android (showing result at the end).
+  * Tiny optimizations in grid_triangle_selector: - No need to calculate matrices when it's empty - No need to check parameter which is always set to true (and makes no sense otherwise)
+  * Add a VS 2013 project file for compile-testing. Fix some warnings and errors. NOTE: This does not mean VisualStudio is now supported - it isn't and this won't even work so far. This is just for some testing.
+  * Fix compiling on Linux again.
+  * Handcode number-to-string conversions in GuiHelper::MakeTimeString instead of using streams. Just a minor speed optimization. Fix a call to SetReverseTime (won't work on VS otherwise)
+  * Can compile now with VS (without sound and joystick)
+  * Set HCRAFT_RELEASE in VS release build.
+  * Some preparations to allow caching some collision calculations and also avoid some. Work in process, not done yet.
+  * Update documentation and indention.
+  * More refactoring to clean-up code.
+  * Fix spelling.
+  * More stuff about optimizing physics in theory. Too bad the profiler doesn't agree with me.
+  * Replace triangle3d::getIntersectionOfPlaneWithLine by a simpler getNearestPointOnTrianglePlane. Finally some optimzation where the profiler agrees with me :-)
+  * Set non-active cameras invisible. Tiny optimization to avoid that Irrlicht start calling their animators. Also found out last version changes created a bug in physics - drops now into floor in some cases :-/
+  * Reverting recent optimization which introduced fall-through-floor bug.
+  * Update info about irrlicht svn version (was changed a while back but define didn't get updated).
+  * No floating point exception trapping on MinGW.
+  * Fix some whitespace mixup between tabs and spaces.
+  * Fix some whitespace mixup between tabs and spaces.
+  * Fix some whitespace mixup between tabs and spaces.
+  * Whitespace fixed for space/tab messup.
+  * Fix compiling with HC1_HAS_FREETYPE disabled.
+
+ -- Roberto Guardato <roberto.guardato@powerprogress.org>  Mon, 23 Nov 2020 11:17:53 +0100

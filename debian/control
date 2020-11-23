@@ -1,0 +1,20 @@
+Package: h-craft
+Priority: optional
+Section: games
+Maintainer: Roberto Guardato <roberto.guardato@powerprogress.org>
+Architecture: ppc64
+Version: 1.3.3
+Depends: libgl1, 
+ libogg0, 
+ libsdl1.2debian, 
+ libopenal1, 
+ libalut0, 
+ libxxf86vm1
+Icon: hcraft.png
+Homepage: http://www.irrgheist.com/games.htm
+Vcs-Git: 
+Description: scifi-racer
+ H-Craft Championship is a fun to play scifi-racer.
+ It features 28+ racetracks, a fresh design and unique driving physics.
+ It comes with a challenging Championship, an arcade and 2 timeattack modes.
+ Also on "Rivals" up to 4 players can have an exciting tournament on a single PC.
